@@ -1,6 +1,6 @@
  "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.” – Martin Fowler 
 # Event App
-This is a project where we can add the event to track it. In this project, I used the Laravel framework, Inersia.js, and Vue.js.
+This is a project where we can add the event to track it. In this project, I used the Laravel framework, Inertia.js, and Vue.js.
 
 ## Installation
 
