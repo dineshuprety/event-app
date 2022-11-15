@@ -1,0 +1,3 @@
+.header {
+    @apply bg-gradient-to-b from-slate-500 to-transparent
+}
