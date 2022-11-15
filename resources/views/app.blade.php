@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full bg-gray-100">
 
 <head>
     <meta charset="utf-8">
@@ -7,10 +7,9 @@
     @inertiaHead
 </head>
 
-<body>
+<body class="h-full">
     @routes
     @inertia
 </body>
 @vite('resources/js/app.js')
-<script src="https://cdn.lordicon.com/qjzruarw.js"></script>
 </html>
