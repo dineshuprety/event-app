@@ -14,35 +14,7 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Frontend/Index', [
+    return Inertia::render('Dashboard', [
         'name' => 'Dinesh Uprety'
     ]);
 })->name('home');
-
-Route::get('/about', function () {
-    sleep(3);
-    return Inertia::render('Frontend/About', [
-        'name' => 'Dinesh Uprety'
-    ]);
-})->name('about');
-
-Route::get('/service', function () {
-    sleep(3);
-    return Inertia::render('Frontend/Service', [
-        'name' => 'Dinesh Uprety'
-    ]);
-})->name('service');
-
-Route::get('/teams', function () {
-    sleep(3);
-    return Inertia::render('Frontend/Teams', [
-        'name' => 'Dinesh Uprety'
-    ]);
-})->name('teams');
-
-Route::get('/contact', function () {
-    sleep(3);
-    return Inertia::render('Frontend/Contact', [
-        'name' => 'Dinesh Uprety'
-    ]);
-})->name('contact');
