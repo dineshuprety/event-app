@@ -18,6 +18,7 @@
   import LayoutVue from '../../Layouts/Layout.vue';
   
   defineProps({
-    events: Array
+    events: Array,
+    success: Array
   })
   </script> 
