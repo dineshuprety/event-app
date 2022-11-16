@@ -15,7 +15,6 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    sleep(2);
     return Inertia::render('Dashboard');
 })->name('home');
 
@@ -24,4 +23,5 @@ Route::get('/', function () {
  */
 Route::prefix('event')->group(function () {
     Route::get('index', [EventController::class, 'index'])->name('index');
+    Route::get('create', [EventController::class, 'create'])->name('create');
 });

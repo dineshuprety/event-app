@@ -1,28 +1,18 @@
 <template>
-    <div class="">
+    <footer>
+        <div class="pt-8 mt-16 border-t border-gray-100">
+            <p class="text-xs leading-relaxed text-center text-gray-500">
+                © Company 2022. All rights reserved.
 
-        <div class="px-4 py-6 border-t border-gray-100 sm:px-0">
-            <div class="text-center sm:flex sm:justify-between sm:text-left">
-                <p class="text-sm text-gray-500">
-                    <span class="block sm:inline">All rights reserved.</span>
+                <br />
 
-                    <a class="inline-block text-teal-600 underline transition hover:text-teal-600/75" href="/">
-                        Terms & Conditions
-                    </a>
-
-                    <span>&middot;</span>
-
-                    <a class="inline-block text-teal-600 underline transition hover:text-teal-600/75" href="/">
-                        Privacy Policy
-                    </a>
-                </p>
-
-                <p class="mt-4 text-sm text-gray-500 sm:order-first sm:mt-0">
-                    &copy; 2022 Company Name
-                </p>
-            </div>
+                Created with
+                <a href="" class="text-gray-700 underline transition hover:text-gray-700/75">Laravel</a>
+                and
+                <a href="" class="text-gray-700 underline transition hover:text-gray-700/75">Laravel Livewire</a>.
+            </p>
         </div>
-    </div>
+    </footer>
 </template>
 <script setup>
 </script>
