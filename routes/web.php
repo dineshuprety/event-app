@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EventController;
 use Inertia\Inertia;
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,13 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Dashboard', [
-        'name' => 'Dinesh Uprety'
-    ]);
+    sleep(2);
+    return Inertia::render('Dashboard');
 })->name('home');
+
+/**
+ * Event routes
+ */
+Route::prefix('event')->group(function () {
+    Route::get('index', [EventController::class, 'index'])->name('index');
+});

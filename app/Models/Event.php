@@ -22,6 +22,6 @@ class Event extends Model
      * adding enum on cast.
      */
     protected $casts = [
-        'role' => EventStatus::class
+        'status' => EventStatus::class
     ];
 }
