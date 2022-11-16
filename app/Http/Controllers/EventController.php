@@ -23,6 +23,6 @@ class EventController extends Controller
 
     public function store(EventRequestValidation $request)
     {
-        
+       $request->validated();
     }
 }
