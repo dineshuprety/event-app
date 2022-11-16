@@ -35,6 +35,6 @@ class EventController extends Controller
 
        // redirect in index page
 
-       return to_route('index')->with(['success' => 'Event Created successfully']);
+       return to_route('index')->with('success', 'Event created.');
     }
 }
