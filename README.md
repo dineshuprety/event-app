@@ -24,7 +24,9 @@ Hopfully you have install composer and npm in your device
 
 Run Command :
 ```bash
- Composer install 
+ Composer install
+ // To seed the Event Data
+ php artisan migrate:fresh --seed 
 
 ```
 ```bash

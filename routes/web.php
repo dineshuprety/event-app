@@ -24,4 +24,6 @@ Route::get('/', function () {
 Route::prefix('event')->group(function () {
     Route::get('index', [EventController::class, 'index'])->name('index');
     Route::get('create', [EventController::class, 'create'])->name('create');
+    Route::post('store', [EventController::class, 'store'])->name('store');
+
 });
