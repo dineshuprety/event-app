@@ -14,9 +14,9 @@ class EventController extends Controller
     public function index(Request $request)
     {
         return Inertia::render('Event/Index', [
-            'filter' => $request->all('upcoming', 'finished'),
+            'filters' => $request->all('upcoming', 'finished','upcomingwith7days','finishedwith7days'),
             'events' => Event::orderByStartDate()
-                ->filter($request->only('upcoming', 'finished'))
+                ->filter($request->only('status'))
                 ->paginate(10)
                 ->withQueryString()
                 ->through(fn ($event) => [
@@ -50,9 +50,30 @@ class EventController extends Controller
         return to_route('index')->with('success', 'Event created.');
     }
 
-    public function edit($id)
+    public function edit(Event $event)
     {
-        dd($id);
+        return Inertia::render('Event/Edit', [
+            'event' => [
+                'id' => $event->id,
+                'title' => $event->title,
+                'description' => $event->description,
+                'start_date' => $event->start_date,
+                'end_date' => $event->end_date,
+            ]
+        ]);
+    }
+
+    public function update(EventRequestValidation $request, Event $event)
+    {
+        $request->validated();
+        $event->update([
+            'title' => $request->title,
+            'start_date' => $request->start_date,
+            'end_date' => $request->end_date,
+            'description' => $request->description
+        ]);
+
+        return to_route('index')->with('success', 'Event updated.');
     }
 
     public function destroy(Event $event)

@@ -15,7 +15,14 @@
               </div>
               <div class="flex items-center justify-between">
                 <div class="flex items-center p-2 rounded-md bg-gray-50">
-                  <!-- select -->
+                  <label class="block text-gray-700">Events:</label>
+                  <select v-model="form.status" class="w-full mt-1 form-select">
+                    <option :value="null" />
+                    <option value="upcoming">Upcoming Event</option>
+                    <option value="finished">Finished Event</option>
+                    <option value="upcomingwith7days">Upcoming Event with in 7 days</option>
+                    <option value="finishedwith7days">Finished Event with in 7 days</option>
+                  </select>
                 </div>
                 <div class="ml-10 space-x-8 lg:ml-40">
                   <Link :href="route('create')"
@@ -97,7 +104,9 @@
                           </button>
                         </td>
                       </tr>
-
+                      <tr v-if="events.data.length === 0">
+                        <td class="px-6 py-4 text-center border-t" colspan="6">No organizations found.</td>
+                      </tr>
                     </tbody>
                   </table>
                   <div>
@@ -116,17 +125,29 @@
     
 <script setup>
 import { Inertia } from '@inertiajs/inertia'
-import { Link, Head } from '@inertiajs/inertia-vue3';
+import { Link, Head, useForm, } from '@inertiajs/inertia-vue3';
 import LayoutVue from '../../Layouts/Layout.vue';
 import FlashMessageVue from '../../Components/FlashMessage.vue';
 import PaginationVue from '../../Components/Pagination.vue';
+import {ref, watch } from 'vue';
+import pickBy from 'lodash/pickBy';
 
-defineProps({
+
+const props = defineProps({
   events: Object,
+  filters: Object,
+})
+
+let form = useForm({
+    status: props.filters.status
+});
+
+watch(form, value =>{
+  Inertia.get(route('index'), pickBy(value), { preserveState: false, preserveScroll: true  });
 })
 
 const destory = (id) => {
-  Inertia.delete(route('destory',id), {
+  Inertia.delete(route('destroy', id), {
     onBefore: () => confirm('Are you sure you want to delete this event?'),
   })
 }

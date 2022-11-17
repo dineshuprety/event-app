@@ -68,6 +68,6 @@ const user = {
 }
 const navigation = [
   { name: 'Dashboard', href: 'home', current: true },
-  { name: 'Event', href: 'index', current: false },
+  { name: 'Event', href: 'index', current: true },
 ]
 </script>
