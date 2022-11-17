@@ -2,7 +2,9 @@
     <div class="min-h-full">
         <NavbarVue />
         <main>
-            <slot />
+            <div class="py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <slot />
+            </div>
         </main>
         <FooterVue />
     </div>

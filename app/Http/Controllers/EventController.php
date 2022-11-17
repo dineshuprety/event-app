@@ -25,6 +25,7 @@ class EventController extends Controller
     public function store(EventRequestValidation $request)
     {
        $request->validated();
+       sleep(3);
        // create the event
        Event::create([
         'title' => $request->title,

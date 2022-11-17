@@ -2,9 +2,8 @@
   <div>
     <LayoutVue>
       <Head title="Dashboard"></Head>
-      <div class="py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <!-- Replace with your content -->
-        <div class="px-4 py-6 sm:px-0">
+       <!-- Replace with your content -->
+       <div class="px-4 py-6 sm:px-0">
           <div class="bg-gray-50">
             <div
               class="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-8">
@@ -28,7 +27,6 @@
           </div>
         </div>
         <!-- /End replace -->
-      </div>
     </LayoutVue>
   </div>
 </template>

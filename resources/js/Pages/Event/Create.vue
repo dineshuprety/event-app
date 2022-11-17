@@ -55,9 +55,8 @@
 
                                     </div>
                                 </div>
-                                <div class="px-4 py-3 text-right bg-gray-50 sm:px-6">
-                                    <button type="submit" :disabled="form.processing"
-                                        class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Create</button>
+                                <div class="flex items-center justify-end px-8 py-4 border-t border-gray-100 bg-gray-50">
+                                    <LoadingButtonVue type="submit" :loading="form.processing" class="inline-block px-8 py-3 text-sm font-medium text-white transition bg-indigo-600 rounded hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500">Create Event</LoadingButtonVue>
                                 </div>
                             </div>
                         </form>
@@ -71,6 +70,7 @@
 <script setup>
 import { Head, useForm } from '@inertiajs/inertia-vue3';
 import Layout from '../../Layouts/Layout.vue';
+import LoadingButtonVue from '../../Components/LoadingButton.vue';
 
 const form = useForm({
     title: '',
