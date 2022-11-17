@@ -143,7 +143,7 @@ let form = useForm({
 });
 
 watch(form, value =>{
-  Inertia.get(route('index'), pickBy(value), { preserveState: false, preserveScroll: true  });
+  Inertia.get(route('index'), pickBy(value), { preserveState: true });
 })
 
 const destory = (id) => {

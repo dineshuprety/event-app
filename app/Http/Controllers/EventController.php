@@ -14,7 +14,7 @@ class EventController extends Controller
     public function index(Request $request)
     {
         return Inertia::render('Event/Index', [
-            'filters' => $request->all('upcoming', 'finished','upcomingwith7days','finishedwith7days'),
+            'filters' => $request->all('status'),
             'events' => Event::orderByStartDate()
                 ->filter($request->only('status'))
                 ->paginate(10)
