@@ -86,14 +86,15 @@
                           </span>
                         </td>
                         <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">
-                          <Link :href="route('edit',event.id)"
+                          <Link :href="route('edit', event.id)"
                             class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-blue-700 underline uppercase transition bg-transparent rounded ripple hover:text-blue-900 focus:outline-none">
-                            edit
+                          edit
                           </Link>
-                          <Link :href="route('destory',event.id)"
-                            class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-blue-700 underline uppercase transition bg-transparent rounded ripple hover:text-blue-900 focus:outline-none">
+                          <button
+                            class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-blue-700 underline uppercase transition bg-transparent rounded ripple hover:text-blue-900 focus:outline-none"
+                            @click="destory(event.id)">
                             delete
-                          </Link>
+                          </button>
                         </td>
                       </tr>
 
@@ -114,6 +115,7 @@
 </template>
     
 <script setup>
+import { Inertia } from '@inertiajs/inertia'
 import { Link, Head } from '@inertiajs/inertia-vue3';
 import LayoutVue from '../../Layouts/Layout.vue';
 import FlashMessageVue from '../../Components/FlashMessage.vue';
@@ -122,4 +124,10 @@ import PaginationVue from '../../Components/Pagination.vue';
 defineProps({
   events: Object,
 })
+
+const destory = (id) => {
+  Inertia.delete(route('destory',id), {
+    onBefore: () => confirm('Are you sure you want to delete this event?'),
+  })
+}
 </script> 

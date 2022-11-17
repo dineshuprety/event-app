@@ -59,6 +59,6 @@ class EventController extends Controller
     {
         $event->delete();
 
-        return Redirect::back()->with('success', 'Event deleted.');
+        return to_route('index')->with('success', 'Event deleted.');
     }
 }
