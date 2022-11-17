@@ -25,7 +25,6 @@ class EventFactory extends Factory
             'status' => $this->faker->randomElement(
                 [
                     EventStatus::upcomingEvent,
-                    EventStatus::FinishedEvent
                 ]
             )
         ];

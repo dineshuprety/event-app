@@ -25,5 +25,7 @@ Route::prefix('event')->group(function () {
     Route::get('index', [EventController::class, 'index'])->name('index');
     Route::get('create', [EventController::class, 'create'])->name('create');
     Route::post('store', [EventController::class, 'store'])->name('store');
+    Route::get('edit/{id}', [EventController::class, 'edit'])->name('edit');
+    Route::delete('delete/{id}',[EventController::class, 'destory'])->name('destory');
 
 });

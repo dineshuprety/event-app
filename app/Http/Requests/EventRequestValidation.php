@@ -25,8 +25,8 @@ class EventRequestValidation extends FormRequest
     {
         return [
             'title' => ['required', 'max:50'],
-            'start_date' => 'required',
-            'end_date' => 'required',
+            'start_date' => 'required|date|after:now',
+            'end_date' => 'required|date|after:start_date',
             'description' => 'required',
         ];
     }

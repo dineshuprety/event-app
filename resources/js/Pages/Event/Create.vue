@@ -82,7 +82,6 @@ const form = useForm({
 // storing event
 const store = () => {
     form.post(route('store'));
-    form.reset();
 }
 
 

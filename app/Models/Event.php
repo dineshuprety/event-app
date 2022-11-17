@@ -24,4 +24,21 @@ class Event extends Model
     protected $casts = [
         'status' => EventStatus::class
     ];
+
+    /**
+     * Scopes for sort by event start date in ascending order
+     */
+
+     public function scopeOrderByStartDate($query)
+     {
+        return $query->orderBy('start_date','asc');
+     }
+
+     /**
+      * Scopes for filter
+      */
+      public function scopeFilter($query)
+     {
+        return $query;
+     }
 }
