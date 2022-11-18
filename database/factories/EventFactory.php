@@ -18,10 +18,10 @@ class EventFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->title,
+            'title' => $this->faker->sentence,
             'description' => $this->faker->text,
-            'start_date' => $this->faker->dateTimeInInterval('now', '+20 days')->format('Y-m-d'),
-            'end_date' => $this->faker->dateTimeInInterval('+1 week', '+20 days')->format('Y-m-d'),
+            'start_date' => $this->faker->dateTimeInInterval('-2 week', '+20 days')->format('Y-m-d'),
+            'end_date' => $this->faker->dateTimeInInterval('-1 week', '+20 days')->format('Y-m-d'),
             'status' => $this->faker->randomElement(
                 [
                     EventStatus::upcomingEvent,

@@ -31,7 +31,7 @@ class Event extends Model
      */
     public function scopeOrderByStartDate($query)
     {
-        return $query->orderBy('start_date', 'asc');
+        return $query->orderBy('status','asc')->orderBy('start_date', 'asc');
     }
 
     /**
