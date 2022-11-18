@@ -2,9 +2,8 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Enums\EventStatus;
-use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Event>
@@ -21,13 +20,13 @@ class EventFactory extends Factory
         return [
             'title' => $this->faker->title,
             'description' => $this->faker->text,
-            'start_date'=> $this->faker->dateTimeInInterval('now', '+20 days')->format('Y-m-d'),
+            'start_date' => $this->faker->dateTimeInInterval('now', '+20 days')->format('Y-m-d'),
             'end_date' => $this->faker->dateTimeInInterval('+1 week', '+20 days')->format('Y-m-d'),
             'status' => $this->faker->randomElement(
                 [
                     EventStatus::upcomingEvent,
                 ]
-            )
+            ),
         ];
     }
 }

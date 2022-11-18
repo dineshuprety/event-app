@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
+use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +28,5 @@ Route::prefix('event')->group(function () {
     Route::post('store', [EventController::class, 'store'])->name('store');
     Route::get('edit/{event}', [EventController::class, 'edit'])->name('edit');
     Route::put('update/{event}', [EventController::class, 'update'])->name('update');
-    Route::delete('delete/{event}',[EventController::class, 'destroy'])->name('destroy');
-
+    Route::delete('delete/{event}', [EventController::class, 'destroy'])->name('destroy');
 });

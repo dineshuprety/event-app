@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Inertia\Inertia;
-use App\Models\Event;
 use App\Http\Requests\EventRequestValidation;
+use App\Models\Event;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
+use Inertia\Inertia;
 
 class EventController extends Controller
 {
@@ -43,7 +43,7 @@ class EventController extends Controller
             'title' => $request->title,
             'start_date' => $request->start_date,
             'end_date' => $request->end_date,
-            'description' => $request->description
+            'description' => $request->description,
         ]);
 
         // redirect in event index page
@@ -59,7 +59,7 @@ class EventController extends Controller
                 'description' => $event->description,
                 'start_date' => $event->start_date,
                 'end_date' => $event->end_date,
-            ]
+            ],
         ]);
     }
 
@@ -70,7 +70,7 @@ class EventController extends Controller
             'title' => $request->title,
             'start_date' => $request->start_date,
             'end_date' => $request->end_date,
-            'description' => $request->description
+            'description' => $request->description,
         ]);
 
         return to_route('index')->with('success', 'Event updated.');

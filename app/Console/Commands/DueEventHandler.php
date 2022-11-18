@@ -2,9 +2,9 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
 use App\Models\Event;
 use Carbon\Carbon;
+use Illuminate\Console\Command;
 
 class DueEventHandler extends Command
 {
@@ -33,16 +33,17 @@ class DueEventHandler extends Command
         $events = Event::where('status', 'upcoming')
             ->whereDate('end_date', '=', Carbon::today()->toDateString())->get();
         if ($events->isEmpty()) {
-            $this->error("Invalid or non-existent event.");
+            $this->error('Invalid or non-existent event.');
+
             return 1;
         }
 
-        $this->info("Updating past date events to finished events");
+        $this->info('Updating past date events to finished events');
         foreach ($events as $event) {
             $event->update([
-                'status' => 'finished'
+                'status' => 'finished',
             ]);
         }
-        $this->info("Updated Success");
+        $this->info('Updated Success');
     }
 }
