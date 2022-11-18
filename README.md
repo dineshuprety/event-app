@@ -1,5 +1,7 @@
- "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.” – Martin Fowler 
+"Any fool can write code that a computer can understand. Good programmers write code that humans can understand.” – Martin Fowler
+
 # Event App
+
 This is a project where we can add the event to track it. In this project, I used the Laravel framework, Inertia.js, and Vue.js.
 
 ## Installation
@@ -11,7 +13,8 @@ git clone https://github.com/dineshuprety/event-app.git
 ```
 
 # Run the project
-create file named ".env" add copy the content of .env.example and change 
+
+create file named ".env" add copy the content of .env.example and change
 
 ```bash
 DB_DATABASE=
@@ -23,23 +26,43 @@ so on as required for starting above mention will do the job.
 Hopfully you have install composer and npm in your device
 
 Run Command :
+
 ```bash
  Composer install
- // To seed the Event Data
- php artisan migrate:fresh --seed 
+ // To migrate databse tables
+ php artisan migrate
 
 ```
+
 ```bash
 // To install the packages
- npm install 
+ npm install
 
 // To run the npm
   npm run dev
 ```
 
-Now serve  
+Now serve:
+
 ```bash
 php artisan ser
 ```
-**Have Good day developer and  Happy Coding.**
 
+I write a Laravel command to update the previous end event's status to "finished."
+To run this command directly in the terminal:
+
+```bash
+php artisan event:update
+```
+
+This command was registered in Laravel Task Scheduling. It will run on the server at the end of each Nepal time period.
+To run this command in the terminal:
+
+```bash
+php artisan schedule:work
+
+// we can list the registered scheduling
+php artisan schedule:list
+```
+
+**Have Good day developer and Happy Coding.**
