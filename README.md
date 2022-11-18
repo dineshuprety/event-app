@@ -64,12 +64,10 @@ To install all the dependency packages for vue js and tailwind css, you need to 
 // To install the packages
  npm install
 
-// To run the npm
-  npm run dev
 ```
 
 After installing dependencies, you need to run vite.
-To run Vites, you need to type:
+To run vite, you need to type:
 
 ```bash
 
