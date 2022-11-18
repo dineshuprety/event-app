@@ -93,7 +93,7 @@
                           </span>
                         </td>
                         <td class="px-5 py-5 text-sm bg-white border-b border-gray-200">
-                          <Link :href="route('edit', event.id)"
+                          <Link v-show="event.status === 'upcoming'" :href="route('edit', event.id)"
                             class="inline-block px-6 py-2 text-xs font-medium leading-6 text-center text-blue-700 underline uppercase transition bg-transparent rounded ripple hover:text-blue-900 focus:outline-none">
                           edit
                           </Link>

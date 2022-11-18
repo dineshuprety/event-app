@@ -39,17 +39,18 @@ class Event extends Model
      */
     public function scopeFilter($query, array $filters)
     {
+        // dd( Carbon::today()->addDay(-7)->toDateString());
         $query->when($filters['status'] ?? null, function ($query, $status) { // this is for upcoming filters
         if ($status === EventStatus::upcomingEvent->value) {  // check if status is upcoming event
             $query->where('status', 'like', '%'.$status.'%');
         } elseif ($status === EventStatus::finishedEvent->value) { // check if status is finished event
             $query->where('status', 'like', '%'.$status.'%');
-        } elseif ($status === EventStatus::upcomingWith7days->value) {  // check if status is upcoming event with in 7 days
+        } elseif ($status === EventStatus::upcomingWith7days->value) {  // check if status is upcoming event before with in 7 days
             $query->where('status', EventStatus::upcomingEvent->value)
                 ->whereBetween('start_date', [Carbon::today()->toDateString(), Carbon::today()->addDay(7)->toDateString()]);
-        } else { // check if status is finished event with in 7 days
+        } else { // check if status is finished event after with in 7 days
             $query->where('status', EventStatus::finishedEvent->value)
-                ->whereBetween('end_date', [Carbon::today()->toDateString(), Carbon::today()->addDay(7)->toDateString()]);
+                ->whereBetween('end_date', [Carbon::today()->addDay(-7)->toDateString(), Carbon::today()->toDateString()]);
         }
         });
     }

@@ -31,7 +31,7 @@ class DueEventHandler extends Command
     {
         /* This is the code that will be executed when the command is called. */
         $events = Event::where('status', 'upcoming')
-            ->whereDate('end_date', '=', Carbon::today()->toDateString())->get();
+            ->whereDate('end_date', '<=', Carbon::today()->toDateString())->get();
         if ($events->isEmpty()) {
             $this->error('Invalid or non-existent event.');
 
