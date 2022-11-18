@@ -15,8 +15,8 @@ class EventController extends Controller
     {
         return Inertia::render('Event/Index', [
             'filters' => $request->all('status'),
-            'events' => Event::orderByStartDate()
-                ->filter($request->only('status'))
+            'events' => Event::orderByStartDate() // scope for start date on asc order
+                ->filter($request->only('status')) // scope for filter the data with value
                 ->paginate(10)
                 ->withQueryString()
                 ->through(fn ($event) => [

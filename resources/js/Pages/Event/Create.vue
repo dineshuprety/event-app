@@ -16,7 +16,7 @@
                                                 class="block text-sm font-medium text-gray-700">Title</label>
                                             <input type="text" v-model="form.title" name="title" id="title"
                                                 autocomplete="given-name"
-                                                class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+                                                class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" required/>
                                             <div v-if="form.errors.title" v-text="form.errors.title"
                                                 class="text-red-900 "></div>
                                         </div>
@@ -26,7 +26,7 @@
                                             <label for="city" class="block text-sm font-medium text-gray-700">Start
                                                 Date</label>
                                             <input type="date" v-model="form.start_date"
-                                                class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+                                                class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" required/>
                                             <div v-if="form.errors.start_date" v-text="form.errors.start_date"
                                                 class="text-red-900 "></div>
                                         </div>
@@ -35,7 +35,7 @@
                                             <label for="region" class="block text-sm font-medium text-gray-700">End /
                                                 Date</label>
                                             <input type="date" v-model="form.end_date"
-                                                class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+                                                class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" required/>
                                             <div v-if="form.errors.end_date" v-text="form.errors.end_date"
                                                 class="text-red-900 "></div>
                                         </div>
@@ -46,7 +46,7 @@
                                             <div class="mt-1">
                                                 <textarea rows="3" v-model="form.description"
                                                     class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                                                    placeholder="description" />
+                                                    placeholder="description" required/>
                                                 <div v-if="form.errors.description" v-text="form.errors.description"
                                                     class="text-red-900 "></div>
                                             </div>
